@@ -14,9 +14,9 @@ function Banner() {
       </p>
 
       <div className="mt-8 flex flex-wrap justify-center gap-4">
-          <a className="block w-full rounded border border-blue-500 duration-300 bg-blue-500 px-12 py-3 text-sm font-medium text-white hover:bg-white hover:text-blue-500 focus:outline-none focus:ring active:text-opacity-75 sm:w-auto" href="#">Get Started</a>
+          <a className="block w-full rounded border border-blue-500 duration-300 bg-blue-500 px-12 py-3 text-sm font-medium text-white hover:bg-white hover:text-blue-500 focus:outline-none focus:ring active:text-opacity-75 sm:w-auto" href="/">Get Started</a>
 
-          <a className="block w-full rounded border border-blue-500 duration-300 px-12 py-3 text-sm font-medium text-blue-500 hover:bg-blue-500 hover:text-white focus:outline-none focus:ring active:bg-blue-500 sm:w-auto" href="#">
+          <a className="block w-full rounded border border-blue-500 duration-300 px-12 py-3 text-sm font-medium text-blue-500 hover:bg-blue-500 hover:text-white focus:outline-none focus:ring active:bg-blue-500 sm:w-auto" href="/">
           Learn More
           </a>
       </div>

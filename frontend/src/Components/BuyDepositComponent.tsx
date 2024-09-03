@@ -53,6 +53,9 @@ function BuyDepositComponent() {
       console.error('Error opening deposit:', error);
     }finally{
       setIsLoading(false)
+      if (amountRef.current) {
+        amountRef.current.value = '';
+      }
     }
   };
 

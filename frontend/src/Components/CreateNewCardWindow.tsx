@@ -8,15 +8,9 @@ import axios from 'axios';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../store'; 
 import { appActions } from '../store/app-slice';
-import { userDataActions } from '../store/userData-slice';
 import LoadingWindowComponent from './LoadingWindowComponent';
 
-interface UserData {
-    amount: number;
-    id: string;
-    name: string;
-    surename: string;
-}
+
 
 type CardColor = 'black' | 'blue' | 'colored' | 'purple' | 'red';
 
@@ -25,7 +19,6 @@ function CreateNewCardWindow() {
     const name = useSelector((state: RootState) => state.userData.name);
     const surename = useSelector((state: RootState) => state.userData.surename);
     const dispatch = useDispatch();
-    
     const amountRef = useRef<HTMLInputElement>(null);
     const cardNameRef = useRef<HTMLInputElement>(null);
     const [color, setColor] = useState("");
@@ -43,7 +36,7 @@ function CreateNewCardWindow() {
         try {
             setIsLoading(true)
             const transferAmount = parseFloat(amountRef.current?.value || "0");
-            const response = await axios.post('http://localhost:3000/card/create-card', { 
+            await axios.post('http://localhost:3000/card/create-card', { 
                 totalAmount: transferAmount,
                 currentAmount: transferAmount,
                 color: color,
@@ -52,23 +45,13 @@ function CreateNewCardWindow() {
                 cardOwner: name + " " + surename,
                 cardOwnerID: userID
             });
-
-            const userDataString = localStorage.getItem('User');
-            if (userDataString !== null) {
-                const userData: UserData = JSON.parse(userDataString);
-                userData.amount -= transferAmount;
-                localStorage.setItem('User', JSON.stringify(userData));
-
-
-                dispatch(userDataActions.setNewAmount(transferAmount));
-            } else {
-                console.error('Brak danych w localStorage dla klucza "User".');
-            }
-
         } catch (error) {
             console.error('Error creating card:', error);
         }finally{
-          setIsLoading(false)
+          setIsLoading(false);
+          if (amountRef.current) amountRef.current.value = "";
+          if (cardNameRef.current) cardNameRef.current.value = "";
+          setColor(""); 
         }
     };
 

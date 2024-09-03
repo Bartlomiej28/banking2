@@ -71,6 +71,11 @@ function PaymentTransferPage() {
     await handleTransaction();
     await handleSendTransferNotification();
     setIsLoadingCardsTransaction(false);
+
+    if (sourceRef.current) sourceRef.current.value = "normal";
+    if (descriptionRef.current) descriptionRef.current.value = "";
+    if (recipientEmailAddressRef.current) recipientEmailAddressRef.current.value = "";
+    if (amountRef.current) amountRef.current.value = "";
   }
 
   return (

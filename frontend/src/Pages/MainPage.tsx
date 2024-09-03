@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React from 'react'
 import SidebarComponent from '../Components/SidebarComponent'
 import {Route, Routes} from 'react-router-dom'
 import HomePage from './HomePage'
