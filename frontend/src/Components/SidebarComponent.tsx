@@ -1,5 +1,4 @@
 import React from 'react';
-import profileImage from '../assets/profileImage.png';
 import { IoIosLogOut } from "react-icons/io";
 import { NavLink } from 'react-router-dom';
 import './active.css'
@@ -18,6 +17,7 @@ function SidebarComponent() {
   const name = useSelector((state: RootState) => state.userData.name);
   const surename = useSelector((state: RootState) => state.userData.surename);
   const email = useSelector((state: RootState) => state.userData.email);
+  const thumbnail = useSelector((state: RootState) => state.userData.thumbnail);
 
   const navigation = useNavigate();
   const handleLogOut = () =>{
@@ -71,7 +71,7 @@ function SidebarComponent() {
         </div>
 
         <div className='w-full border-t pt-4 flex gap-2 items-center'>
-          <img src={profileImage} alt='profile' className='w-12 h-12 rounded-full object-cover object-center'/>
+          <img src={thumbnail} alt='profile' className='w-12 h-12 rounded-full object-cover object-center'/>
           <div className='flex flex-col'>
             <p className='font-semibold'>{name} {surename}</p>
             <p className='font-semibold text-xs text-gray-500'>{email}</p>

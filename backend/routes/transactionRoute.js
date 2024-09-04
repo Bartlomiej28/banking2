@@ -34,7 +34,7 @@ router.put('/new-transaction', async (req, res) => {
             if (!fromCard || fromCard.currentAmount < transferAmountNum) {
                 return res.status(400).json({ message: "Niewystarczająca ilość środków na karcie" });
             }
-
+            await prisma.user.update({ where: { id: from }, data: { amount: fromUser.amount - transferAmountNum } });/** */
             await prisma.card.update({ where: { id: source }, data: { currentAmount: fromCard.currentAmount - transferAmountNum } });
             await prisma.user.update({ where: { email: to }, data: { amount: toUser.amount + transferAmountNum } });
         }

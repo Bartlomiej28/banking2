@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react'
-import profileImage from '../assets/profileImage.png'
 import { CgScreen } from "react-icons/cg";
 import { AiOutlineShopping } from "react-icons/ai";
 import { MdOutlineSavings } from "react-icons/md";
@@ -26,6 +25,7 @@ function ProfileSidebarComponent() {
   const sureName = useSelector((state: RootState) => state.userData.surename)
   const email = useSelector((state: RootState) => state.userData.email);
   const userID = useSelector((state: RootState) => state.userData.id);
+  const thumbnail = useSelector((state: RootState) => state.userData.thumbnail);
   const [cards, setCards] = useState<Card[]>([]);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -48,7 +48,7 @@ function ProfileSidebarComponent() {
   return (
     <div className='w-full h-full flex flex-col border border-t-0 border-r-0 border-b-0 sticky top-0'>
         <div className='w-full h-48 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 relative p-4'>
-          <img src={profileImage} alt='profile' className='w-32 h-32 object-cover object-center rounded-full absolute -bottom-14'/>
+          <img src={thumbnail} alt='profile' className='w-32 h-32 object-cover object-center rounded-full absolute -bottom-14'/>
         </div>
         <div className='flex flex-col gap-4 p-4 h-auto overflow-y-auto'>
           <div className='h-auto mt-12'>
