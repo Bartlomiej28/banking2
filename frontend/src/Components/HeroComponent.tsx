@@ -6,7 +6,7 @@ function HeroComponent() {
     <section className="w-full min-h-screen h-auto flex flex-col lg:flex-row justify-center items-center p-16 pt-20">
       <div className='w-full lg:w-1/2 h-auto lg:pr-8 '>
         <h1 className="block text-3xl font-bold text-gray-800 sm:text-4xl lg:text-6xl lg:leading-tight">Start your journey with <span className="text-blue-600">FortisBank</span></h1>
-        <p className="mt-3 text-lg text-gray-800 dark:text-gray-400">Send money, open savings accounts, invest, and manage your finances all in one place.</p>
+        <p className="mt-3 text-lg text-gray-800">Send money, open savings accounts, invest, and manage your finances all in one place.</p>
         <div className="mt-7 flex flex-col sm:flex-row gap-4">
           <a className="py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none" href="/">
             Get started
