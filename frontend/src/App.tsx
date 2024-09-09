@@ -6,7 +6,7 @@ import SignUpPage from './Pages/SignUpPage';
 
 function App() {
   return (
-    <div className='w-full min-h-screen h-auto'>
+    <div className='w-full min-h-screen h-auto bg-white'>
       <Routes>
         <Route path={'/'} element={<LandingPage/>}/>
         <Route path='/sign-in' element={<SignInPage/>}/>
