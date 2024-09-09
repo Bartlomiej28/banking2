@@ -19,7 +19,7 @@ function Comments() {
         <h2 className="text-center text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl mb-16">
           Read trusted reviews from our customers
         </h2>
-        <div className="container m-auto px-6 text-gray-600 dark:text-gray-300 md:px-12 xl:px-6">
+        <div className="container m-auto px-6 text-gray-600 md:px-12 xl:px-6">
           <div className="md:columns-2 lg:columns-3 gap-8 space-y-8">
             {comments.map(comment =>(
               <Comment name={comment.name} text={comment.text} image={comment.image}/>
